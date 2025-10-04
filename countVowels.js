@@ -19,7 +19,8 @@ let countVowels2 = (str) => {
     if (vowels.includes(element.toLowerCase())) return element;
   });
 
-  return k;
+  return k.length;
 };
 
 console.log(countVowels2("sujoy ghoSAL"));
+
