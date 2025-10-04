@@ -1,4 +1,8 @@
 let checkTriAngleType = (a, b, c) => {
+  if (a + b <= c || b + c <= a || a + c <= b) {
+    return "Not a valid triangle";
+  }
+
   if (a === b && b === c) {
     return "equilateral";
   } else if (a === b || b === c || a === c) {
@@ -8,5 +12,4 @@ let checkTriAngleType = (a, b, c) => {
   }
 };
 
-
-console.log(checkTriAngleType(2,2,2))
+console.log(checkTriAngleType(2, 2, 2));

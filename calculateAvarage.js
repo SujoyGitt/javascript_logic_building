@@ -6,3 +6,4 @@ let calculateAvarage = (arr) => {
 };
 
 console.log(calculateAvarage([35, 25, 32, 87, 97, 63]));
+           
