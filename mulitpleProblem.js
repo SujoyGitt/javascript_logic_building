@@ -1,30 +1,47 @@
-let isUpperCase = (elm) => {
-  return elm === elm.toUpperCase() ? true : false;
-};
-console.log(isUpperCase("s"));
+// let isUpperCase = (elm) => {
+//   return elm === elm.toUpperCase() ? true : false;
+// };
+// console.log(isUpperCase("s"));
 
-let isLowerCase = (elm) => {
-  return elm === elm.toLowerCase() ? true : false;
-};
-console.log(isLowerCase("s"));
+// let isLowerCase = (elm) => {
+//   return elm === elm.toLowerCase() ? true : false;
+// };
+// console.log(isLowerCase("s"));
 
-const startWith = (str, checkStr) => {
-  // return str.startsWith(checkStr);
-  let arr = str.trim().split(" ");
-  return arr[0].toLowerCase() === checkStr.toLowerCase() ? true : false;
-};
+// const startWith = (str, checkStr) => {
+//   // return str.startsWith(checkStr);
+//   let arr = str.trim().split(" ");
+//   return arr[0].toLowerCase() === checkStr.toLowerCase() ? true : false;
+// };
 
-console.log(startWith("Sujoy Ghosal", "SuJOy"));
+// console.log(startWith("Sujoy Ghosal", "SuJOy"));
 
-let reverseStr = (str) => {
-  // let arr = str.trim().split("");
-  // return arr.reverse().join("");
+// let reverseStr = (str) => {
+//   // let arr = str.trim().split("");
+//   // return arr.reverse().join("");
 
-  let stArr = [];
-  for (let i = str.length - 1; i >= 0; i--) {
-   stArr.push(str[i])
+//   let stArr = [];
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     stArr.push(str[i]);
+//   }
+//   return stArr.join("");
+// };
+
+// console.log(reverseStr("Hello"));
+
+let numbers = [1, 2, 2, 3, 1, 4, 2];
+let obj = {};
+for (const element of numbers) {
+  obj[element] = (obj[element] || 0) + 1;
+}
+console.log(obj);
+
+const repetationCheck = (array) => {
+  let output = {};
+  for (const element of new Set([...array])) {
+    output[element] = array.filter((item) => item == element).length;
   }
-  return stArr.join('')
+  return output;
 };
 
-console.log(reverseStr("Hello"));
+console.log(repetationCheck(numbers));

@@ -1,6 +1,6 @@
+
 const findMedian = (arr) => {
   let nwArr = arr.sort((a, b) => a - b);
-
   let mid = Math.floor(arr.length / 2);
 
   if (arr.length % 2 === 0) {
@@ -9,5 +9,6 @@ const findMedian = (arr) => {
     return nwArr[mid];
   }
 };
+
 console.log(findMedian([8, 3, 2, 9, 7]));
-console.log(findMedian([5, 3, 9, 2]));
+console.log(findMedian([5, 4, 9, 2]));
