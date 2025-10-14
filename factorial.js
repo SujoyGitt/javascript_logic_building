@@ -5,20 +5,19 @@ let factorial = (number) => {
   }
   let total = arr.reduce((initialVal, currentVal) => {
     return initialVal * currentVal;
-  },1);
+  }, 1);
 
   return total;
 };
 
 console.log(factorial(3));
 
-let recursivefactorial = (n)=>{
-  if (n === 0 || n === 1) {
+const factorialRecursive = (number) => {
+  if (number === 1 || number < 1) {
     return 1;
+  }else{
+    return number * factorialRecursive(number - 1);
   }
-  return n * recursivefactorial(n - 1);
-}
+};
 
-
-console.log(recursivefactorial(4));
-    
+console.log(factorialRecursive(4));
