@@ -5,21 +5,283 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beautiful App UI</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen flex items-center justify-center font-sans text-white px-4 py-8 lg:py-0">
-    <h1></h1>
+  <body
+    class="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen flex items-center justify-center font-sans text-white px-4 py-8 lg:py-0"
+  >
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-gray-800 mb-3">
+          Image Filters Gallery
+        </h1>
+      </div>
 
-    <div class="glass">
-      <input type="number" name="" id="num" />
-      <button class="px-8 py-3 rouded-lg ms-4 bg-gradient-to-br from-red-900 via-yellow-800 to-black" onclick="funt()">Click Me</button>
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12 filter_btn_container" >
+        <button data-category="all"
+          class="px-8  py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+        >
+          All
+        </button>
+        <button data-category="animal"
+          class="px-8 py-3 bg-white text-gray-700 rounded-full font-semibold shadow-md hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white hover:scale-105 transition-all duration-300"
+        >
+          Animal
+        </button>
+        <button data-category="bird"
+          class="px-8 py-3 bg-white text-gray-700 rounded-full font-semibold shadow-md hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white hover:scale-105 transition-all duration-300"
+        >
+          Bird
+        </button>
+        <button data-category="nature"
+          class="px-8 py-3 bg-white text-gray-700 rounded-full font-semibold shadow-md hover:shadow-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white hover:scale-105 transition-all duration-300"
+        >
+          Nature
+        </button>
+      </div>
+
+      <!-- Image Gallery -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 img-gallery">
+        <!-- Image Card 1 - Animal -->
+        <div data-image="animal" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" >
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7"
+              alt="Animal"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-purple-500 text-white text-sm rounded-full font-semibold"
+              >Animal</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 2 - Bird -->
+        <div data-image="bird" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1444464666168-49d633b86797"
+              alt="Bird"
+              class="w-full h-full object-cover sepia group-hover:sepia-0 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-pink-500 text-white text-sm rounded-full font-semibold"
+              >Bird</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 3 - Nature -->
+        <div data-image="nature" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+              alt="Nature"
+              class="w-full h-full object-cover saturate-50 group-hover:saturate-100 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-green-500 text-white text-sm rounded-full font-semibold"
+              >Nature</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 4 - Animal -->
+        <div data-image="animal"  class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f"
+              alt="Animal"
+              class="w-full h-full object-cover contrast-125 group-hover:contrast-100 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-purple-500 text-white text-sm rounded-full font-semibold"
+              >Animal</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 5 - Nature -->
+        <div data-image="nature" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05"
+              alt="Nature"
+              class="w-full h-full object-cover hue-rotate-15 group-hover:hue-rotate-0 transition-all duration-500"
+            />
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4" >
+            <span class="inline-block px-3 py-1 bg-green-500 text-white text-sm rounded-full font-semibold">Nature</span >
+          </div>
+        </div>
+
+        <!-- Image Card 6 - Bird -->
+        <div data-image="bird" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1552728089-57bdde30beb3"
+              alt="Bird"
+              class="w-full h-full object-cover brightness-75 group-hover:brightness-100 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-pink-500 text-white text-sm rounded-full font-semibold"
+              >Bird</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 7 - Animal -->
+        <div data-image="animal" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"  >
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1535268647677-300dbf3d78d1"
+              alt="Animal"
+              class="w-full h-full object-cover opacity-75 group-hover:opacity-100 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-purple-500 text-white text-sm rounded-full font-semibold"
+              >Animal</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 8 - Nature -->
+        <div data-image="nature" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d"
+              alt="Nature"
+              class="w-full h-full object-cover invert group-hover:invert-0 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-green-500 text-white text-sm rounded-full font-semibold"
+              >Nature</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 9 - Bird -->
+        <div data-image="bird" class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1535083783855-76ae62b2914e"
+              alt="Bird"
+              class="w-full h-full object-cover saturate-150 group-hover:saturate-100 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-pink-500 text-white text-sm rounded-full font-semibold"
+              >Bird</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 10 - Animal -->
+        <div data-image="animal"
+          class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+              alt="Animal"
+              class="w-full h-full object-cover  transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-purple-500 text-white text-sm rounded-full font-semibold"
+              >Animal</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 11 - Nature -->
+        <div data-image="nature"
+          class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e"
+              alt="Nature"
+              class="w-full h-full object-cover hue-rotate-180 group-hover:hue-rotate-0 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-green-500 text-white text-sm rounded-full font-semibold"
+              >Nature</span
+            >
+          </div>
+        </div>
+
+        <!-- Image Card 12 - Bird -->
+        <div data-image="bird"
+          class="group relative bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+        >
+          <div class="aspect-square overflow-hidden">
+            <img loading="lazy" 
+              src="https://images.unsplash.com/photo-1520763185298-1b434c919102"
+              alt="Bird"
+              class="w-full h-full object-cover contrast-50 group-hover:contrast-100 transition-all duration-500"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4"
+          >
+            <span
+              class="inline-block px-3 py-1 bg-pink-500 text-white text-sm rounded-full font-semibold"
+              >Bird</span
+            >
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="trunckate.js"></script>
-
+    <script src="filterGallery.js" type="module"></script>
   </body>
 </html>
